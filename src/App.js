@@ -5,19 +5,18 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./Login";
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Header />
-
         <Routes>
-          <Route path="/login" element={[]}></Route>
+          <Route path="/login" element={[<Login />]}></Route>
 
-          <Route path="/checkout" element={[<Checkout />]}></Route>
+          <Route path="/checkout" element={[<Header />, <Checkout />]}></Route>
 
-          <Route path="/" element={[<Home />]}></Route>
+          <Route path="/" element={[<Header />, <Home />]}></Route>
         </Routes>
       </div>
     </Router>
